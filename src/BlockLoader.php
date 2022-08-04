@@ -267,6 +267,10 @@ class BlockLoader extends Singleton {
 
 				unset( $data[ $key ] );
 			}
+			
+			if($key == 'enqueue_script') {
+				$data[$key] = get_template_directory_uri() . '/template-parts/blocks/' . $value . '.js';
+			}
 		}
 
 		if ( ! empty( $supports ) ) {
